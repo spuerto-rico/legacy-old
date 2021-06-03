@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -66,6 +65,8 @@
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		F5481DA9547F4677A840A4C0 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0DDC948C9104F3695731E7F /* libRNGestureHandler.a */; };
 		FE9465CCDA7442408BF79507 /* libReactNativeViewPDF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E2C940FAC24EF6BC6E77B6 /* libReactNativeViewPDF.a */; };
+		41B81C2E11C84E638316A76D /* libRNCReactNativeCheckbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 288B42E877484FACA40116C8 /* libRNCReactNativeCheckbox.a */; };
+		73E4E5D43E0649899E6788C6 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83D49ED913514320BD6D6035 /* Fontisto.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -482,6 +483,9 @@
 		F5B6DE2959C14F4794595DF4 /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 		FC1E97959DE2435185C0BC5B /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTVideo.xcodeproj; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; };
 		FF083EE17F034D3BA500AB3D /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		F4143E8715A1411DA3890664 /* RNCReactNativeCheckbox.xcodeproj */ = {isa = PBXFileReference; name = "RNCReactNativeCheckbox.xcodeproj"; path = "../node_modules/@react-native-community/checkbox/ios/RNCReactNativeCheckbox.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		288B42E877484FACA40116C8 /* libRNCReactNativeCheckbox.a */ = {isa = PBXFileReference; name = "libRNCReactNativeCheckbox.a"; path = "libRNCReactNativeCheckbox.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		83D49ED913514320BD6D6035 /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -517,6 +521,7 @@
 				FE9465CCDA7442408BF79507 /* libReactNativeViewPDF.a in Frameworks */,
 				8BDACABC24D0FB2500EA3070 /* libRCTContacts.a in Frameworks */,
 				EAB5A92B021A4D629CD96AAA /* libRNVectorIcons.a in Frameworks */,
+				41B81C2E11C84E638316A76D /* libRNCReactNativeCheckbox.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,6 +690,7 @@
 				FF083EE17F034D3BA500AB3D /* Octicons.ttf */,
 				AA758FF1524A4EFEBB3F5F5F /* SimpleLineIcons.ttf */,
 				B92C9523681E48DDB29FE7F8 /* Zocial.ttf */,
+				83D49ED913514320BD6D6035 /* Fontisto.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -739,6 +745,7 @@
 				9EE46B7C392C4C66901CD82F /* RNCAsyncStorage.xcodeproj */,
 				B307E751EE0748F9A6CF39B3 /* ReactNativeViewPDF.xcodeproj */,
 				A679D9BE9CE04916A164C966 /* RNVectorIcons.xcodeproj */,
+				F4143E8715A1411DA3890664 /* RNCReactNativeCheckbox.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1435,6 +1442,7 @@
 				C3EC5FA0EA704066946F5C2D /* SimpleLineIcons.ttf in Resources */,
 				8BA1780C22805CD0001A3810 /* splash.png in Resources */,
 				86849A40490E422FB30C6CC0 /* Zocial.ttf in Resources */,
+				73E4E5D43E0649899E6788C6 /* Fontisto.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1565,12 +1573,14 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\checkbox\ios",
 				);
 				INFOPLIST_FILE = LegacyNetworkTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1597,12 +1607,14 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\checkbox\ios",
 				);
 				INFOPLIST_FILE = LegacyNetworkTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1631,6 +1643,7 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\checkbox\ios",
 				);
 				INFOPLIST_FILE = LegacyNetwork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1661,6 +1674,7 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\checkbox\ios",
 				);
 				INFOPLIST_FILE = LegacyNetwork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1697,11 +1711,13 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\checkbox\ios",
 				);
 				INFOPLIST_FILE = "LegacyNetwork-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1737,11 +1753,13 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\checkbox\ios",
 				);
 				INFOPLIST_FILE = "LegacyNetwork-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1776,11 +1794,13 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\checkbox\ios",
 				);
 				INFOPLIST_FILE = "LegacyNetwork-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1815,11 +1835,13 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 					"$(SRCROOT)/../node_modules/react-native-view-pdf/ReactNativeViewPDF",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\@react-native-community\checkbox\ios",
 				);
 				INFOPLIST_FILE = "LegacyNetwork-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);

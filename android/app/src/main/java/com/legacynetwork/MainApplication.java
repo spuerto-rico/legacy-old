@@ -3,6 +3,8 @@ package com.legacynetwork;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.rt2zz.reactnativecontacts.ReactNativeContacts;
+import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.rumax.reactnative.pdfviewer.PDFViewPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
@@ -29,6 +31,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ReactNativeContacts(),
+            new ReactCheckBoxPackage(),
             new VectorIconsPackage(),
             new PDFViewPackage(),
             new AsyncStoragePackage(),

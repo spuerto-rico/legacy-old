@@ -473,7 +473,7 @@ class SendInvites extends Component {
         showsHorizontalScrollIndicator={false}
         alwaysBounceVertical={true}>
 
-         <Card title="SEND INVITES" isShadow={true}>
+         <Card title="SEND INVITE" isShadow={true}>
            <View style={styles.textContainer}>
              <Text style={styles.textStyle}></Text>
              <FormInline label="Message Type" style={{zIndex: 10}}>

@@ -20,6 +20,6 @@ export const postCall = async (url, data) => {
 
 export const getCall = async (url, data) => {
   const accessToken = await AsyncStorage.getItem("accessToken");
-  // console.log(API_URL + url, { headers: {...HEADERS, Authorization: `Bearer ${accessToken}` || ''}, method: 'GET'});
+  console.log(API_URL + url, { headers: {...HEADERS, Authorization: `Bearer ${accessToken}` || ''}, method: 'GET'});
   return fetch(API_URL + url, { headers: {...HEADERS, Authorization: `Bearer ${accessToken}` || ''}, method: 'GET' })
 }
