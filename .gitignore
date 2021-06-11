@@ -10,8 +10,6 @@ npm-debug.*
 web-build/
 web-report/
 coverage/
-android/
-ios/
 
 # Created by https://www.gitignore.io/api/macos,windows
 # Edit at https://www.gitignore.io/?templates=macos,windows
