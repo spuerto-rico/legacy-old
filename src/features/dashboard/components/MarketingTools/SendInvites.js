@@ -9,6 +9,7 @@ import {
   Image, 
   TouchableHighlight, 
   Alert} from 'react-native';
+  
 import AsyncStorage from '@react-native-community/async-storage';
 import AppHeader from '../../../../components/AppHeader';
 import Card from '../../../../components/Card';
