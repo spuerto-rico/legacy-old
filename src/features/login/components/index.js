@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, ScrollView, KeyboardAvoidingView } from 'react-native';
-import { Header } from 'react-navigation';
+import { View, Text, StyleSheet, Alert, SafeAreaView, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { Container, Content, Toast} from 'native-base';
 import Input from '../../../components/Input';
-import Card from '../../../components/Card';
 import Button from '../../../components/Button';
-import Link from '../../../components/Link';
-
 import { tokenRequest } from '../actions';
 import { connect } from 'react-redux';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -17,9 +14,7 @@ class Login extends Component {
     password: 'bld'
   };
 
-
   componentDidMount() {
-    // this.props.navigation.navigate('drawer')
     this.getData();
   }
 
@@ -30,7 +25,6 @@ class Login extends Component {
         console.log(value)
 
         this.props.navigation.navigate('drawer')
-
         // value previously stored
       }
     } catch(e) {
@@ -39,14 +33,15 @@ class Login extends Component {
   }
 
   onLogin = () => {
+    console.log('testing');
     this.props.tokenRequest(this.state.username, this.state.password);
   }
 
   render() {
 
     return (
-      <SafeAreaView style={styles.container}>
-        <KeyboardAvoidingView style={{flex: 1}} behavior="position" keyboardVerticalOffset={0}>
+      <Container>
+        <Content>
           <ScrollView style={{paddingTop: 150}} contentContainerStyle={{ padding: 16}}>
               <View style={ styles.compName }>
                 <Text style={ styles.legacy }>legacy</Text>
@@ -75,8 +70,8 @@ class Login extends Component {
                 onPress={() => this.onLogin()}
               />
           </ScrollView>
-        </KeyboardAvoidingView>
-      </SafeAreaView>
+        </Content>
+      </Container>
     );
   }
 }

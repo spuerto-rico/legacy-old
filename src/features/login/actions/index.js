@@ -1,5 +1,6 @@
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILED, API_FAILURE } from './types'
 import { postCall, getCall, OAUTH } from '../../../api';
+import { Toast } from 'native-base';
 import { NavigationActions } from 'react-navigation';
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -15,7 +16,7 @@ export const tokenRequest = (username, password) => {
     try {
       let response = await postCall('oauth/token', { ...OAUTH, username, password });
       let result = await response.json();
-      console.log('response', response, result)
+      console.log('response', response, result);
       if (response.status == 200) {
         const payload = {
           refreshToken: result.refresh_token,
@@ -39,11 +40,18 @@ export const tokenRequest = (username, password) => {
           }
         }
       } else {
+        Toast.show({
+          text: result.message ,
+          position: "bottom"
+        });
         dispatch({ type: LOGIN_FAILED, message: result.message });
       }
     } catch(error) {
       console.log('Login API Error', error);
-      alert('Network Connection Failed');
+      Toast.show({
+        text: 'Network Connection Failed' ,
+        position: "bottom"
+      });
     }
   }
 }

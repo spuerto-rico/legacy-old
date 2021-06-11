@@ -8,9 +8,8 @@ import {
   Dimensions, 
   Image, 
   TouchableHighlight, 
-  Alert, 
-  AsyncStorage } from 'react-native';
-
+  Alert} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import AppHeader from '../../../../components/AppHeader';
 import Card from '../../../../components/Card';
 import FormInline from '../../../../components/FormInline';
@@ -611,7 +610,6 @@ class SendInvites extends Component {
                 </FormInline>
               </View>
              }
-          
              <Button
                type="primaryV2"
                textColor="White"
