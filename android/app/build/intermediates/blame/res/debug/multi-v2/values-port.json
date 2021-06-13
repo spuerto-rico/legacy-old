@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\projects\\mobile\\react native\\legacy-network\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+            "outputFile": "E:\\Projects\\ReactNative\\legacyapp\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Rico\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\b4dc67c7564aee94a6ad59bb217cbf98\\res\\values-port\\values-port.xml",

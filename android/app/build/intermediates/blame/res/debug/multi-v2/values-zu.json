@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\projects\\mobile\\react native\\legacy-network\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zu\\values-zu.xml",
+            "outputFile": "E:\\Projects\\ReactNative\\legacyapp\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zu\\values-zu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Rico\\.gradle\\caches\\transforms-1\\files-1.1\\jetified-exoplayer-ui-2.9.3.aar\\027a5700c9178377a0005a331152da21\\res\\values-zu\\values-zu.xml",
+                    "source": "C:\\Users\\Rico\\.gradle\\caches\\transforms-1\\files-1.1\\jetified-exoplayer-ui-2.9.3.aar\\4d1c0a7cb29588e3150abb4e8e50ad08\\res\\values-zu\\values-zu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

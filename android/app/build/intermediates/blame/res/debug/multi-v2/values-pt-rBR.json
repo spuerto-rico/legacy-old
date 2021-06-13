@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\projects\\mobile\\react native\\legacy-network\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
+            "outputFile": "E:\\Projects\\ReactNative\\legacyapp\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Rico\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\c50cb36ce3ec29c9201e0b70079a60bf\\res\\values-pt-rBR\\values-pt-rBR.xml",
