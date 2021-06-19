@@ -136,10 +136,22 @@ Install the project's npm packages first:
 npm i
 ```
 
-Then:
+Then: to start the metro
 
 ```
-npm start
+npx react-native start
+```
+
+Then: to run the app ios
+
+```
+npx react-native run-ios
+```
+
+Then: to run the app android
+
+```
+npx react-native run-android
 ```
 
 ## Why This (Readme) is Here
