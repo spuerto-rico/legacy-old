@@ -649,7 +649,7 @@ class SendInvites extends Component {
                   value={this.state.type}
                   items={this.state.items}
                   setOpen={() => this.setOpen()}
-                  setValue={(item) => this.setValue(item)}
+                  setValue={(value) => this.setValue(value)}
                   style={{ backgroundColor: 'white' }}
                 />
               </FormInline>
