@@ -5,6 +5,41 @@
 	<key>logFormatVersion</key>
 	<integer>10</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>B00A3E0F-EDD1-4361-8BCD-B24CDBA066F6</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B00A3E0F-EDD1-4361-8BCD-B24CDBA066F6.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>LegacyNetwork project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>LegacyNetwork</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace LegacyNetwork with scheme LegacyNetwork and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>646057864.48541903</real>
+			<key>timeStoppedRecording</key>
+			<real>646057867.40986502</real>
+			<key>title</key>
+			<string>Building workspace LegacyNetwork with scheme LegacyNetwork and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>B00A3E0F-EDD1-4361-8BCD-B24CDBA066F6</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

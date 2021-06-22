@@ -24848,8 +24848,8 @@
  <key>files</key>
  <array>
   <string>/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/ReactCommon/jsi/jsi.cpp</string>
-  <string>/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/ReactCommon/jsi/jsi.h</string>
-  <string>/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/ReactCommon/jsi/jsi-inl.h</string>
+  <string>/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/React/../ReactCommon/jsi/jsi.h</string>
+  <string>/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/React/../ReactCommon/jsi/jsi-inl.h</string>
   <string>/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk/usr/include/c++/v1/type_traits</string>
   <string>/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk/usr/include/c++/v1/exception</string>
   <string>/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk/usr/include/c++/v1/memory</string>

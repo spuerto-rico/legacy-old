@@ -23,5 +23,5 @@ dependencies: \
   /Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/build/LegacyNetwork/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
   /Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/build/LegacyNetwork/Build/Products/Debug-iphonesimulator/include/yoga/YGValue.h \
   /Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
-  /Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/Libraries/WebSocket/RCTReconnectingWebSocket.h \
-  /Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/Libraries/WebSocket/RCTSRWebSocket.h
+  /Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/React/../Libraries/WebSocket/RCTReconnectingWebSocket.h \
+  /Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/React/../Libraries/WebSocket/RCTSRWebSocket.h

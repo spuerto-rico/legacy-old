@@ -643,7 +643,7 @@ class SendInvites extends Component {
           <Card title="SEND INVITE" isShadow={true}>
             <View style={styles.textContainer}>
               <Text style={styles.textStyle}></Text>
-              <FormInline label="Message Type">
+              <FormInline label="Message Type" style={{ zIndex: 10 }}>
                 <DropDownPicker
                   open={this.state.open}
                   value={this.state.type}

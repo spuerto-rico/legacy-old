@@ -9,4 +9,4 @@ dependencies: \
   /Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/React/Base/RCTLog.h \
   /Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/React/Base/RCTAssert.h \
   /Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/Libraries/WebSocket/RCTReconnectingWebSocket.h
+  /Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/node_modules/react-native/React/../Libraries/WebSocket/RCTReconnectingWebSocket.h
