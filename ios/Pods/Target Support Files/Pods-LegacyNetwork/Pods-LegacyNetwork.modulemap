@@ -1,0 +1,6 @@
+framework module Pods_LegacyNetwork {
+  umbrella header "Pods-LegacyNetwork-umbrella.h"
+
+  export *
+  module * { export * }
+}

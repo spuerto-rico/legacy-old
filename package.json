@@ -53,6 +53,9 @@
     "metro-react-native-babel-preset": "0.53.1",
     "react-test-renderer": "16.8.6"
   },
+  "optionalDependencies": {
+    "fsevents": "2.1.2"
+  },
   "jest": {
     "preset": "react-native"
   }

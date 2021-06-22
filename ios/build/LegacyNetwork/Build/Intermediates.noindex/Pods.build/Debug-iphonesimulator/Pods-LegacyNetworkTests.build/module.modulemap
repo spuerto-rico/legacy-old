@@ -1,0 +1,6 @@
+framework module Pods_LegacyNetworkTests {
+  umbrella header "Pods-LegacyNetworkTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

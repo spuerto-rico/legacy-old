@@ -1,0 +1,68 @@
+{
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "0dfe7a076b6e708bf122f725574111704fa2d43570a292f483963370024974b6"
+    },
+    {
+      "guid" : "85293f3cbdd3b1d24db0f31c7c50acea7ceb6b36bcfc2fb90f69ac96de4975d6"
+    },
+    {
+      "guid" : "85293f3cbdd3b1d24db0f31c7c50aceab8656357b4e3c9cbdedf6d0daf7e7987"
+    }
+  ],
+  "continueBuildingAfterErrors" : false,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "x86_64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator14.5",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "x86_64"
+      ],
+      "targetArchitecture" : "x86_64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/build/LegacyNetwork/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/build/LegacyNetwork/Build/Products",
+      "derivedDataPath" : "/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/build/LegacyNetwork",
+      "indexDataStoreFolderPath" : "/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/build/LegacyNetwork/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/build/LegacyNetwork/Index/PrecompiledHeaders",
+      "pchPath" : "/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/build/LegacyNetwork/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "commandLine" : {
+        "table" : {
+
+        }
+      },
+      "synthesized" : {
+        "table" : {
+          "ACTION" : "build",
+          "ASSETCATALOG_FILTER_FOR_DEVICE_MODEL" : "iPhone13,2",
+          "ASSETCATALOG_FILTER_FOR_DEVICE_OS_VERSION" : "14.4",
+          "BUILD_ACTIVE_RESOURCES_ONLY" : "YES",
+          "ENABLE_PREVIEWS" : "NO",
+          "TARGET_DEVICE_IDENTIFIER" : "92FEA7A5-E1BC-47B0-A492-A6AD49F3D2A3",
+          "TARGET_DEVICE_MODEL" : "iPhone13,2",
+          "TARGET_DEVICE_OS_VERSION" : "14.4",
+          "TARGET_DEVICE_PLATFORM_NAME" : "iphonesimulator"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : false
+}

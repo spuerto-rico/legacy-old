@@ -1,0 +1,6 @@
+framework module Pods_LegacyNetwork_tvOS {
+  umbrella header "Pods-LegacyNetwork-tvOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
