@@ -10,6 +10,7 @@ import {
   TouchableHighlight,
   Alert,
   PermissionsAndroid,
+  Platform,
 } from 'react-native';
 
 import AsyncStorage from '@react-native-community/async-storage';
@@ -643,7 +644,7 @@ class SendInvites extends Component {
           <Card title="SEND INVITE" isShadow={true}>
             <View style={styles.textContainer}>
               <Text style={styles.textStyle}></Text>
-              <FormInline label="Message Type" style={{ zIndex: 10 }}>
+              {Platform.OS == 'android' ? (<FormInline label="Message Type" >
                 <DropDownPicker
                   open={this.state.open}
                   value={this.state.type}
@@ -652,7 +653,17 @@ class SendInvites extends Component {
                   setValue={(value) => this.setValue(value)}
                   style={{ backgroundColor: 'white' }}
                 />
-              </FormInline>
+              </FormInline>) : (<FormInline label="Message Type" style={{ zIndex: 10 }}>
+                <DropDownPicker
+                  open={this.state.open}
+                  value={this.state.type}
+                  items={this.state.items}
+                  setOpen={() => this.setOpen()}
+                  setValue={(value) => this.setValue(value)}
+                  style={{ backgroundColor: 'white' }}
+                />
+              </FormInline>)}
+              
               {this.state.type == 'sms' ? (
                 <View>
                   <FormInline label="Name" style={{ zIndex: 10 }}>
