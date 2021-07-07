@@ -1,4 +1,4 @@
-export const API_URL = 'http://dev.legacynetwork.com/';
+export const API_URL = 'http://synergylegacynetwork.com/api/';
 import AsyncStorage from '@react-native-community/async-storage';
 
 export const HEADERS = {
@@ -9,6 +9,7 @@ export const HEADERS = {
 export const OAUTH = {
   grant_type: 'password',
   client_id: 3,
+  // client_secret: 'iWAFMthzblxbArUWKMirWgZLt1o5dgQDKVZwnbMG',
   client_secret: 'iWAFMthzblxbArUWKMirWgZLt1o5dgQDKVZwnbMG',
 }
 
@@ -20,6 +21,6 @@ export const postCall = async (url, data) => {
 
 export const getCall = async (url, data) => {
   const accessToken = await AsyncStorage.getItem("accessToken");
-  console.log(API_URL + url, { headers: {...HEADERS, Authorization: `Bearer ${accessToken}` || ''}, method: 'GET'});
+  // console.log(API_URL + url, { headers: {...HEADERS, Authorization: `Bearer ${accessToken}` || ''}, method: 'GET'});
   return fetch(API_URL + url, { headers: {...HEADERS, Authorization: `Bearer ${accessToken}` || ''}, method: 'GET' })
 }

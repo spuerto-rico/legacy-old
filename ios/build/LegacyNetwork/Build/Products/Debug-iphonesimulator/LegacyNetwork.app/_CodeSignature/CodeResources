@@ -110,7 +110,7 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		3iK24jevdkJGu89GTt5A3chkLRU=
+		Z0xA0ev4nT2/Rvkt5N18LLcyK9M=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		dYnCSaat9A68yxd3RHQsVrYQCe0=
+		qHLoTuFOZwMvwIu5ZNtV6d1BUKI=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -218,7 +218,7 @@
 		</data>
 		<key>PlugIns/LegacyNetworkTests.xctest.dSYM/Contents/Resources/DWARF/LegacyNetworkTests</key>
 		<data>
-		4cuFQGzHEMUVQZpNEkCcI+c/Teo=
+		mNczRKk6aB8K7zOnJQuegRqL6UQ=
 		</data>
 		<key>PlugIns/LegacyNetworkTests.xctest/Info.plist</key>
 		<data>
@@ -226,7 +226,7 @@
 		</data>
 		<key>PlugIns/LegacyNetworkTests.xctest/LegacyNetworkTests</key>
 		<data>
-		wWfEbjh+LxBNl8Pw3924VP9SZTk=
+		kkNY9pyOgLRPoL+9B30KrY9U3Fw=
 		</data>
 		<key>PlugIns/LegacyNetworkTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
@@ -537,11 +537,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3iK24jevdkJGu89GTt5A3chkLRU=
+			Z0xA0ev4nT2/Rvkt5N18LLcyK9M=
 			</data>
 			<key>hash2</key>
 			<data>
-			kmBzSCEdRQ02pVBLPP0a5/FtXpPLAdVkWD3hZwEyCYI=
+			TQsqpIsHOyo++6pgF0RcejysW3nFl8Z+xf3R1OqJahM=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -812,11 +812,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4cuFQGzHEMUVQZpNEkCcI+c/Teo=
+			mNczRKk6aB8K7zOnJQuegRqL6UQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			k8Bv7Oym8gUt+EJE9MLex9+nAtTaKOg4xj2GvkkDxxk=
+			rUMqOPt7JCAuPwG0XzDzmlFNE0EgjSx5HuoQGQeGvSQ=
 			</data>
 		</dict>
 		<key>PlugIns/LegacyNetworkTests.xctest/Info.plist</key>
@@ -834,11 +834,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wWfEbjh+LxBNl8Pw3924VP9SZTk=
+			kkNY9pyOgLRPoL+9B30KrY9U3Fw=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZvFUbC6w2HcHRkbehbF8kd9gdkO4Ev2uD6mIREY/MN0=
+			AHMAbDmCjQvP0lsNh3GFVUlk63tO010krgQPUZObvOU=
 			</data>
 		</dict>
 		<key>PlugIns/LegacyNetworkTests.xctest/_CodeSignature/CodeResources</key>

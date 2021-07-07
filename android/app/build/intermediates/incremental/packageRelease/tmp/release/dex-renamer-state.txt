@@ -1,4 +1,4 @@
-#Sat Jun 12 23:22:10 SGT 2021
-base.0=E\:\\Projects\\ReactNative\\legacyapp\\android\\app\\build\\intermediates\\transforms\\dexMerger\\release\\0
+#Thu Jun 24 19:05:08 PST 2021
+base.0=/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/android/app/build/intermediates/transforms/dexMerger/release/0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -21,7 +21,7 @@ import Input from '../../../../components/Input';
 import Button from '../../../../components/Button';
 import Modal from 'react-native-modal';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Data from '../../data/category';
+import Data from '../../data/newcategory';
 import AccordionCategory from '../../../../components/AccordionCategory';
 import DropDownPicker from 'react-native-dropdown-picker';
 import SortableListView from 'react-native-sortable-listview';
@@ -193,6 +193,7 @@ class SendInvites extends Component {
       isNullPhone: false,
       isNullMessage: false,
       isNullEmail: false,
+      isValidEmail: true,
       isNullSubject: false,
       isCategoryVisible: false,
       isPreviewInvite: false,
@@ -395,11 +396,13 @@ class SendInvites extends Component {
         });
       }
     } else {
+      let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
       if (
         this.state.name == '' ||
         this.state.message == '' ||
         this.state.subject == '' ||
-        this.state.email == ''
+        this.state.email == '' || 
+        reg.test(this.state.email) === false
       ) {
         alert('Please fill out all required fields');
         this.setState({
@@ -407,6 +410,7 @@ class SendInvites extends Component {
           isNullMessage: this.state.message == '' ? true : false,
           isNullEmail: this.state.email == '' ? true : false,
           isNullSubject: this.state.subject == '' ? true : false,
+          isValidEmail: !(this.state.email == '' ? true : false) ? ((reg.test(this.state.email) === false)? false: true): true,
         });
       } else {
         this.setState({
@@ -414,6 +418,7 @@ class SendInvites extends Component {
           isNullName: false,
           isNullMessage: false,
           isNullEmail: false,
+          isValidEmail: true,
           isNullSubject: false,
         });
       }
@@ -783,6 +788,12 @@ class SendInvites extends Component {
                         *Please fill out this required field
                       </Text>
                     ) : null}
+                    {!this.state.isValidEmail ? (
+                      <Text style={styles.errorText}>
+                        *Email is invalid
+                      </Text>
+                    ) : null}
+                    
                   </FormInline>
                   <FormInline label="Message">
                     <Input

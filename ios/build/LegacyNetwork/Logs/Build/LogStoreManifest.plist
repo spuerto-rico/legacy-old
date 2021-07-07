@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>B00A3E0F-EDD1-4361-8BCD-B24CDBA066F6</key>
+		<key>0EE79E9A-8A70-4D98-8385-F324922E3BB6</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>B00A3E0F-EDD1-4361-8BCD-B24CDBA066F6.xcactivitylog</string>
+			<string>0EE79E9A-8A70-4D98-8385-F324922E3BB6.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,13 +32,13 @@
 			<key>signature</key>
 			<string>Building workspace LegacyNetwork with scheme LegacyNetwork and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>646057864.48541903</real>
+			<real>646841592.12291503</real>
 			<key>timeStoppedRecording</key>
-			<real>646057867.40986502</real>
+			<real>646841601.79205</real>
 			<key>title</key>
 			<string>Building workspace LegacyNetwork with scheme LegacyNetwork and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>B00A3E0F-EDD1-4361-8BCD-B24CDBA066F6</string>
+			<string>0EE79E9A-8A70-4D98-8385-F324922E3BB6</string>
 		</dict>
 	</dict>
 </dict>
