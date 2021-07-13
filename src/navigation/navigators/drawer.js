@@ -635,8 +635,8 @@ const MyDrawer = createDrawerNavigator(
   },
   {
     contentComponent: CustomDrawerContentComponent,
-    // initialRouteName: 'SendInvites',
-    initialRouteName: 'dashboard',
+    initialRouteName: 'SendInvites',
+    // initialRouteName: 'dashboard',
     drawerBackgroundColor: '#202020',
   }
 );

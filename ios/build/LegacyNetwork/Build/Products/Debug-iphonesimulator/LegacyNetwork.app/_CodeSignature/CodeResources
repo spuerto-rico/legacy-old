@@ -190,7 +190,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qHLoTuFOZwMvwIu5ZNtV6d1BUKI=
+		XWLp5oVo41uiAyN2zLtO3vhVgkI=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -218,7 +218,7 @@
 		</data>
 		<key>PlugIns/LegacyNetworkTests.xctest.dSYM/Contents/Resources/DWARF/LegacyNetworkTests</key>
 		<data>
-		mNczRKk6aB8K7zOnJQuegRqL6UQ=
+		uv3wZG8cPCcbXLRJEgX/OKsIE+4=
 		</data>
 		<key>PlugIns/LegacyNetworkTests.xctest/Info.plist</key>
 		<data>
@@ -226,7 +226,7 @@
 		</data>
 		<key>PlugIns/LegacyNetworkTests.xctest/LegacyNetworkTests</key>
 		<data>
-		kkNY9pyOgLRPoL+9B30KrY9U3Fw=
+		C3kCa62uHsuc29E4ajryfvVndg0=
 		</data>
 		<key>PlugIns/LegacyNetworkTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
@@ -812,11 +812,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mNczRKk6aB8K7zOnJQuegRqL6UQ=
+			uv3wZG8cPCcbXLRJEgX/OKsIE+4=
 			</data>
 			<key>hash2</key>
 			<data>
-			rUMqOPt7JCAuPwG0XzDzmlFNE0EgjSx5HuoQGQeGvSQ=
+			N/j9rvE39ltQ96loPO1Wv9qrdUw6hGsgfwiDQt0xWR4=
 			</data>
 		</dict>
 		<key>PlugIns/LegacyNetworkTests.xctest/Info.plist</key>
@@ -834,11 +834,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kkNY9pyOgLRPoL+9B30KrY9U3Fw=
+			C3kCa62uHsuc29E4ajryfvVndg0=
 			</data>
 			<key>hash2</key>
 			<data>
-			AHMAbDmCjQvP0lsNh3GFVUlk63tO010krgQPUZObvOU=
+			7ZckuN7zyx4cXh+dq54o2RkWo0bgi8VHnidOQnauJ7M=
 			</data>
 		</dict>
 		<key>PlugIns/LegacyNetworkTests.xctest/_CodeSignature/CodeResources</key>

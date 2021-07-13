@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\Projects\\ReactNative\\legacyapp\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Rico\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\c50cb36ce3ec29c9201e0b70079a60bf\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Rico\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\b4dc67c7564aee94a6ad59bb217cbf98\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                }
+            ]
+        }
+    ]
+}

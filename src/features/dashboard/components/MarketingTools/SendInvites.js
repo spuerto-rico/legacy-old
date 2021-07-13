@@ -21,11 +21,13 @@ import Input from '../../../../components/Input';
 import Button from '../../../../components/Button';
 import Modal from 'react-native-modal';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Data from '../../data/newcategory';
+import Data from '../../data/categorylist';
 import AccordionCategory from '../../../../components/AccordionCategory';
 import DropDownPicker from 'react-native-dropdown-picker';
 import SortableListView from 'react-native-sortable-listview';
 import VideoPlayer from 'react-native-video-player';
+import PDFView from 'react-native-view-pdf';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -42,13 +44,7 @@ let order = [];
 class RowComponent extends Component {
   renderPdfView = (data) => {
     return (
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'flex-end',
-          alignItems: 'flex-end',
-        }}
-      >
+      <View>
         <View>
           <View
             style={{
@@ -82,7 +78,9 @@ class RowComponent extends Component {
           text="View PDF"
           size="mid"
           buttonStyle={{ height: 35, marginBottom: 20, marginLeft: 10 }}
-          onPress={() => {}}
+          onPress={() => {
+            this.props.onViewPdf(data.content.url);
+          }}
         />
         <TouchableOpacity
           style={{ position: 'absolute', top: -10, right: -5 }}
@@ -197,12 +195,17 @@ class SendInvites extends Component {
       isNullSubject: false,
       isCategoryVisible: false,
       isPreviewInvite: false,
+      isPreviewPopup: false,
+      inputPopup: '',
+      inputType: '',
       listCategoryInvite: [],
       synergy_id: '',
       userId: 0,
       purl: 'partners',
       contacts: [],
       query: '',
+      isPdfView: false,
+      resource: '',
     };
   }
 
@@ -242,9 +245,9 @@ class SendInvites extends Component {
 
   onSetParams = async () => {
     var SynergyFactSheet =
-      "<div class='card-body'><div class='row'><div class='col-7 col-sm-6' id='pdfLeft'><img src='http://dev.legacynetwork.com/images/products/PopUpsWithAssets/ProArgi-9+/Screenshot%20ProArgi-9+%20Info%20Sheet.png' class='img-responsive'></div><div class='col-5 col-sm-6' id='pdfRight'><p><h4 style='font-size: 20px !important;'>Synergy Fact Sheet</h4><a href='http://dev.legacynetwork.com/images/products/PopUpsWithAssets/ProArgi-9+/ProArgi9_ScienceInfoSheet_USen.pdf' target='_blank'><button type='button' id='sharedbutton'>View PDF</button> </a></p></div></div></div>";
+      "<div class='card-body'><div class='row'><div class='col-7 col-sm-6' id='pdfLeft'><img src='https://synergylegacynetwork.com//images/products/PopUpsWithAssets/ProArgi-9+/Screenshot%20ProArgi-9+%20Info%20Sheet.png' class='img-responsive'></div><div class='col-5 col-sm-6' id='pdfRight'><p><h4 style='font-size: 20px !important;'>Synergy Fact Sheet</h4><a href='https://synergylegacynetwork.com//images/products/PopUpsWithAssets/ProArgi-9+/ProArgi9_ScienceInfoSheet_USen.pdf' target='_blank'><button type='button' id='sharedbutton'>View PDF</button> </a></p></div></div></div>";
     var HistoryOfProArgi =
-      "<div class='card-body'><div class='row'><div class='col-7 col-sm-6' id='pdfLeft'><img src='http://dev.legacynetwork.com/images/products/PopUpsWithAssets/ProArgi-9+/Screenshot%20The%20History%20of%20ProArgi-9+.png' class='img-responsive'></div><div class='col-5 col-sm-6' id='pdfRight'><p><h4 style='font-size: 20px !important;'>History of ProArgi-9+</h4><a href='http://dev.legacynetwork.com/images/products/PopUpsWithAssets/ProArgi-9+/The_history_of_ProArgi-9+.pdf' target='_blank'><button type='button' id='sharedbutton'>View PDF</button> </a></p></div></div></div>";
+      "<div class='card-body'><div class='row'><div class='col-7 col-sm-6' id='pdfLeft'><img src='https://synergylegacynetwork.com//images/products/PopUpsWithAssets/ProArgi-9+/Screenshot%20The%20History%20of%20ProArgi-9+.png' class='img-responsive'></div><div class='col-5 col-sm-6' id='pdfRight'><p><h4 style='font-size: 20px !important;'>History of ProArgi-9+</h4><a href='https://synergylegacynetwork.com//images/products/PopUpsWithAssets/ProArgi-9+/The_history_of_ProArgi-9+.pdf' target='_blank'><button type='button' id='sharedbutton'>View PDF</button> </a></p></div></div></div>";
     var SynergyVideoBuyButton =
       "<div class='embed-responsive embed-responsive-16by9'><center><iframe src='https://player.vimeo.com/video/312618526' frameborder='0' allow='accelerometer; autoplay; gyroscope; picture-in-picture'allowfullscreen></iframe></center></div><br>";
 
@@ -258,7 +261,7 @@ class SendInvites extends Component {
       "synergyworldwide.com/en-us/shop/product/ProArgi-9%2B' target='_blank'><button type='button' id='sharedbuttonproduct' value='1'>Buy</button> </a></p>\
         </div>\
           <div class='col-4 col-sm-6' id='productRight'>\
-          <img src='http://dev.legacynetwork.com/images/products/proargi9noflavor-ssp-us.png' class='img-responsive'>\
+          <img src='https://synergylegacynetwork.com//images/products/proargi9noflavor-ssp-us.png' class='img-responsive'>\
           </div>\
       </div>\
     </div>";
@@ -273,7 +276,7 @@ class SendInvites extends Component {
       "synergyworldwide.com/en-us/shop/product/Purify%20Kit' target='_blank'><button type='button' id='sharedbuttonproduct' value='1'>Buy</button> </a></p>\
         </div>\
           <div class='col-4 col-sm-6' id='productRight'>\
-          <img src='http://dev.legacynetwork.com/images/products/purify_kit.png' class='img-responsive'>\
+          <img src='https://synergylegacynetwork.com//images/products/purify_kit.png' class='img-responsive'>\
           </div>\
       </div>\
     </div>";
@@ -288,7 +291,7 @@ class SendInvites extends Component {
       "synergyworldwide.com/en-us/shop/product/Trulūm%20Pack' target='_blank'><button type='button' id='sharedbuttonproduct' value='1'>Buy</button> </a></p>\
         </div>\
           <div class='col-4 col-sm-6' id='productRight'>\
-          <img src='http://dev.legacynetwork.com/images/trulum-pack.png' class='img-responsive'>\
+          <img src='https://synergylegacynetwork.com//images/trulum-pack.png' class='img-responsive'>\
           </div>\
       </div>\
     </div>";
@@ -338,6 +341,30 @@ class SendInvites extends Component {
     });
 
     return params;
+  };
+
+  onSendCancel = () => {
+    this.setState({ isPreviewPopup: false, inputPopup: '', inputType: '' });
+  };
+
+  onSendDone = () => {
+    if (this.state.inputType == 'message') {
+      this.setState({ message: this.state.inputPopup });
+    }
+
+    if (this.state.inputType == 'email') {
+      this.setState({ email: this.state.inputPopup });
+    }
+
+    if (this.state.inputType == 'phone') {
+      this.setState({ phone: this.state.inputPopup });
+    }
+
+    this.setState({ isPreviewPopup: false, inputPopup: '', inputType: '' });
+  };
+
+  onFocusInput = (inputType, value) => {
+    this.setState({ inputType, inputPopup: value, isPreviewPopup: true });
   };
 
   onSendInvite = async () => {
@@ -401,7 +428,7 @@ class SendInvites extends Component {
         this.state.name == '' ||
         this.state.message == '' ||
         this.state.subject == '' ||
-        this.state.email == '' || 
+        this.state.email == '' ||
         reg.test(this.state.email) === false
       ) {
         alert('Please fill out all required fields');
@@ -410,7 +437,11 @@ class SendInvites extends Component {
           isNullMessage: this.state.message == '' ? true : false,
           isNullEmail: this.state.email == '' ? true : false,
           isNullSubject: this.state.subject == '' ? true : false,
-          isValidEmail: !(this.state.email == '' ? true : false) ? ((reg.test(this.state.email) === false)? false: true): true,
+          isValidEmail: !(this.state.email == '' ? true : false)
+            ? reg.test(this.state.email) === false
+              ? false
+              : true
+            : true,
         });
       } else {
         this.setState({
@@ -437,6 +468,7 @@ class SendInvites extends Component {
   };
 
   onAddInvite = (data, id) => {
+    console.log(data);
     let $listInvitePreview = this.state.listCategoryInvite;
     let hashId = this.makeid(32);
     data['id'] = hashId;
@@ -514,6 +546,98 @@ class SendInvites extends Component {
     );
   };
 
+  renderPdfViewer = () => {
+    return (
+      <Modal
+        style={{ margin: 0, paddingTop: 80 }}
+        isVisible={this.state.isPdfView}
+      >
+        <View
+          style={{
+            backgroundColor: '#202020',
+            paddingHorizontal: 10,
+            paddingVertical: 5,
+          }}
+        >
+          <TouchableOpacity
+            style={{ alignSelf: 'flex-end' }}
+            onPress={() => this.setState({ isPdfView: false })}
+          >
+            <FontAwesome name="close" color="#CCCCCC" size={30} />
+          </TouchableOpacity>
+        </View>
+        <PDFView
+          fadeInDuration={250.0}
+          style={{ flex: 1 }}
+          resource={this.state.resource}
+          resourceType={'url'}
+          onLoad={() => console.log('')}
+          onError={() => console.log('Cannot render PDF')}
+        />
+      </Modal>
+    );
+  };
+
+  onViewPdf = (pdfFile) => {
+    this.setState({ isPdfView: true, resource: pdfFile });
+  };
+
+  renderInputPopup = () => {
+    return (
+      <Modal
+        deviceHeight={height}
+        deviceWidth={width}
+        style={styles.modalContainer}
+        isVisible={this.state.isPreviewPopup}
+        animationIn="slideInUp"
+        animationOut="slideOutDown"
+        hasBackdrop={false}
+      >
+        <View style={{ flex: 1 }}>
+          <View style={{ height: 100, backgroundColor: '#00acef' }}>
+            <View style={styles.lefttPosition}>
+              <Button
+                type="primaryV2"
+                textColor="White"
+                text="Cancel"
+                textStyle={{ fontSize: 16, fontWeight: 'bold' }}
+                buttonStyle={{
+                  width: 80,
+                  height: 40,
+                  backgroundColor: 'tranparent',
+                }}
+                onPress={() => this.onSendCancel()}
+              />
+            </View>
+            <View style={styles.rightPosition}>
+              <Button
+                type="primaryV2"
+                textColor="White"
+                text="Done"
+                textStyle={{ fontSize: 16, fontWeight: 'bold' }}
+                buttonStyle={{
+                  width: 80,
+                  height: 40,
+                  backgroundColor: 'tranparent',
+                }}
+                onPress={() => this.onSendDone()}
+              />
+            </View>
+          </View>
+          <View style={{ flex: 1, padding: 10 }}>
+            <FormInline>
+              <Input
+                value={this.state.inputPopup}
+                onChangeText={(inputPopup) => this.setState({ inputPopup })}
+                containerStyle={{ marginBottom: 10 }}
+              />
+            </FormInline>
+          </View>
+        </View>
+      </Modal>
+    );
+  };
+
   renderPreviewInvite = () => {
     return (
       <Modal
@@ -557,7 +681,7 @@ class SendInvites extends Component {
             </View>
           </View>
           <Image
-            source={{ uri: 'http://dev.legacynetwork.com/files/logo.png' }}
+            source={{ uri: 'https://synergylegacynetwork.com//files/logo.png' }}
             style={{
               width: 220,
               height: 60,
@@ -581,6 +705,7 @@ class SendInvites extends Component {
                   onPressArrow={(direction, hashId) =>
                     this.onReOrder(direction, hashId)
                   }
+                  onViewPdf={(data) => this.onViewPdf(data)}
                 />
               )}
             />
@@ -649,26 +774,30 @@ class SendInvites extends Component {
           <Card title="SEND INVITE" isShadow={true}>
             <View style={styles.textContainer}>
               <Text style={styles.textStyle}></Text>
-              {Platform.OS == 'android' ? (<FormInline label="Message Type" >
-                <DropDownPicker
-                  open={this.state.open}
-                  value={this.state.type}
-                  items={this.state.items}
-                  setOpen={() => this.setOpen()}
-                  setValue={(value) => this.setValue(value)}
-                  style={{ backgroundColor: 'white' }}
-                />
-              </FormInline>) : (<FormInline label="Message Type" style={{ zIndex: 10 }}>
-                <DropDownPicker
-                  open={this.state.open}
-                  value={this.state.type}
-                  items={this.state.items}
-                  setOpen={() => this.setOpen()}
-                  setValue={(value) => this.setValue(value)}
-                  style={{ backgroundColor: 'white' }}
-                />
-              </FormInline>)}
-              
+              {Platform.OS == 'android' ? (
+                <FormInline label="Message Type">
+                  <DropDownPicker
+                    open={this.state.open}
+                    value={this.state.type}
+                    items={this.state.items}
+                    setOpen={() => this.setOpen()}
+                    setValue={(value) => this.setValue(value)}
+                    style={{ backgroundColor: 'white' }}
+                  />
+                </FormInline>
+              ) : (
+                <FormInline label="Message Type" style={{ zIndex: 10 }}>
+                  <DropDownPicker
+                    open={this.state.open}
+                    value={this.state.type}
+                    items={this.state.items}
+                    setOpen={() => this.setOpen()}
+                    setValue={(value) => this.setValue(value)}
+                    style={{ backgroundColor: 'white' }}
+                  />
+                </FormInline>
+              )}
+
               {this.state.type == 'sms' ? (
                 <View>
                   <FormInline label="Name" style={{ zIndex: 10 }}>
@@ -722,12 +851,19 @@ class SendInvites extends Component {
                     />
                   </FormInline>
                   <FormInline label="Phone">
-                    <Input
-                      placeholder={this.state.phone}
-                      value={this.state.phone}
-                      onChangeText={(phone) => this.setState({ phone })}
-                      containerStyle={{ marginBottom: 10 }}
-                    />
+                    <TouchableOpacity
+                      onPress={() =>
+                        this.onFocusInput('phone', this.state.phone)
+                      }
+                    >
+                      <Input
+                        pointerEvents={'none'}
+                        placeholder={this.state.phone}
+                        value={this.state.phone}
+                        onChangeText={(phone) => this.setState({ phone })}
+                        containerStyle={{ marginBottom: 10 }}
+                      />
+                    </TouchableOpacity>
                     {this.state.isNullPhone ? (
                       <Text style={styles.errorText}>
                         *Please fill out this required field
@@ -735,12 +871,19 @@ class SendInvites extends Component {
                     ) : null}
                   </FormInline>
                   <FormInline label="Message">
-                    <Input
-                      placeholder={this.state.message}
-                      value={this.state.message}
-                      onChangeText={(message) => this.setState({ message })}
-                      containerStyle={{ marginBottom: 10 }}
-                    />
+                    <TouchableOpacity
+                      onPress={() =>
+                        this.onFocusInput('message', this.state.message)
+                      }
+                    >
+                      <Input
+                        pointerEvents={'none'}
+                        placeholder={this.state.message}
+                        value={this.state.message}
+                        onChangeText={(message) => this.setState({ message })}
+                        containerStyle={{ marginBottom: 10 }}
+                      />
+                    </TouchableOpacity>
                     {this.state.isNullMessage ? (
                       <Text style={styles.errorText}>
                         *Please fill out this required field
@@ -777,31 +920,42 @@ class SendInvites extends Component {
                     ) : null}
                   </FormInline>
                   <FormInline label="Email">
-                    <Input
-                      placeholder={this.state.email}
-                      value={this.state.email}
-                      onChangeText={(email) => this.setState({ email })}
-                      containerStyle={{ marginBottom: 10 }}
-                    />
+                    <TouchableOpacity
+                      onPress={() =>
+                        this.onFocusInput('email', this.state.email)
+                      }
+                    >
+                      <Input
+                        pointerEvents={'none'}
+                        placeholder={this.state.email}
+                        value={this.state.email}
+                        onChangeText={(email) => this.setState({ email })}
+                        containerStyle={{ marginBottom: 10 }}
+                      />
+                    </TouchableOpacity>
                     {this.state.isNullEmail ? (
                       <Text style={styles.errorText}>
                         *Please fill out this required field
                       </Text>
                     ) : null}
                     {!this.state.isValidEmail ? (
-                      <Text style={styles.errorText}>
-                        *Email is invalid
-                      </Text>
+                      <Text style={styles.errorText}>*Email is invalid</Text>
                     ) : null}
-                    
                   </FormInline>
                   <FormInline label="Message">
-                    <Input
-                      placeholder={this.state.message}
-                      value={this.state.message}
-                      onChangeText={(message) => this.setState({ message })}
-                      containerStyle={{ marginBottom: 10 }}
-                    />
+                    <TouchableOpacity
+                      onPress={() =>
+                        this.onFocusInput('message', this.state.message)
+                      }
+                    >
+                      <Input
+                        pointerEvents={'none'}
+                        placeholder={this.state.message}
+                        value={this.state.message}
+                        onChangeText={(message) => this.setState({ message })}
+                        containerStyle={{ marginBottom: 10 }}
+                      />
+                    </TouchableOpacity>
                     {this.state.isNullMessage ? (
                       <Text style={styles.errorText}>
                         *Please fill out this required field
@@ -821,6 +975,8 @@ class SendInvites extends Component {
           </Card>
         </ScrollView>
         {this.renderPreviewInvite()}
+        {this.renderInputPopup()}
+        {this.renderPdfViewer()}
       </View>
     );
   }

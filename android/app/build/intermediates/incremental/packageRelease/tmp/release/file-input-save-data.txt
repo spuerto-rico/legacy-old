@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Jul 08 22:59:39 SGT 2021
+#Tue Jul 13 18:26:47 SGT 2021
 60.set=NATIVE_RESOURCE
 52.set=NATIVE_RESOURCE
 53.base=E\:\\Projects\\ReactNative\\legacyapp\\android\\app\\build\\intermediates\\merged_assets\\release\\mergeReleaseAssets\\out

@@ -1797,7 +1797,7 @@
 			baseConfigurationReference = 0302A5575ED427EF9BDBF1CF /* Pods-LegacyNetwork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
-				CURRENT_PROJECT_VERSION = 1.0.40;
+				CURRENT_PROJECT_VERSION = 1.1.1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = U7TA2QB26S;
 				HEADER_SEARCH_PATHS = (
@@ -1812,7 +1812,7 @@
 				);
 				INFOPLIST_FILE = LegacyNetwork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1830,7 +1830,7 @@
 			baseConfigurationReference = DC379E28DE2CCCB2B347EB92 /* Pods-LegacyNetwork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
-				CURRENT_PROJECT_VERSION = 1.0.40;
+				CURRENT_PROJECT_VERSION = 1.1.1;
 				DEVELOPMENT_TEAM = U7TA2QB26S;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1844,7 +1844,7 @@
 				);
 				INFOPLIST_FILE = LegacyNetwork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

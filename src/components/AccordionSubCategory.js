@@ -1,32 +1,52 @@
-import React, { Component } from "react";
-import { View, TouchableOpacity, Text, StyleSheet, Image, Dimensions} from "react-native";
+import React, { Component } from 'react';
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  Image,
+  Dimensions,
+} from 'react-native';
 import PDFView from 'react-native-view-pdf';
-import Modal from "react-native-modal";
+import Modal from 'react-native-modal';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-var {height, width} = Dimensions.get('window');
+import AccordionChildCategory from './AccordionSubCategory';
+var { height, width } = Dimensions.get('window');
 import Button from './Button';
 
 export default class AccordionSubCategory extends Component {
   constructor(props) {
     super(props);
-      this.state = {
-        data: props.data,
-        expanded: false,
-        resource: "",
-        isPdfView: false
-    }
+    this.state = {
+      data: props.data,
+      expanded: false,
+      resource: '',
+      isPdfView: false,
+    };
   }
 
   toggleExpand = () => {
-    this.setState({ expanded : !this.state.expanded });
-  }
+    this.setState({ expanded: !this.state.expanded });
+  };
 
   renderPdfViewer = () => {
     return (
-      <Modal style={{margin: 0, paddingTop: 80}} isVisible={this.state.isPdfView}>
-        <View style={{backgroundColor: '#202020', paddingHorizontal: 10, paddingVertical: 5}}>
-          <TouchableOpacity style={{alignSelf: 'flex-end'}} onPress={() => this.setState({isPdfView: false})}>
-            <FontAwesome name="close" color="#CCCCCC" size={30}  />
+      <Modal
+        style={{ margin: 0, paddingTop: 80 }}
+        isVisible={this.state.isPdfView}
+      >
+        <View
+          style={{
+            backgroundColor: '#202020',
+            paddingHorizontal: 10,
+            paddingVertical: 5,
+          }}
+        >
+          <TouchableOpacity
+            style={{ alignSelf: 'flex-end' }}
+            onPress={() => this.setState({ isPdfView: false })}
+          >
+            <FontAwesome name="close" color="#CCCCCC" size={30} />
           </TouchableOpacity>
         </View>
         <PDFView
@@ -36,67 +56,95 @@ export default class AccordionSubCategory extends Component {
           resourceType={'url'}
           onLoad={() => console.log('')}
           onError={() => console.log('Cannot render PDF')}
-          />
+        />
       </Modal>
-    )
-  }
+    );
+  };
 
   onViewPdf = (pdfFile) => {
-    this.setState({isPdfView: true, resource: pdfFile})
-  }
+    this.setState({ isPdfView: true, resource: pdfFile });
+  };
 
   renderSubContent = (details) => {
     return (
       <View style={styles.subContainer}>
-        <View style={{flex: 1}}>
+        <View style={{ flex: 1 }}>
           <Text style={{}}>{details.title}</Text>
-          {
-            details.content.isPdf ?
+          {details.content.isPdf ? (
             <Button
               type="primary"
               text="View PDF"
               size="mid"
-              buttonStyle={{height: 35, marginTop: 10}}
-              onPress={() => {}}
+              buttonStyle={{ height: 35, marginTop: 10 }}
+              onPress={() => {
+                this.onViewPdf(details.content.url);
+              }}
             />
-            :
-            null
-          }
-          
+          ) : null}
+
           <Button
             type="primary"
             text="Add to Invite"
             size="mid"
             size="mid"
-            buttonStyle={{height: 35, marginTop: 10}}
-            onPress={this.props.onPress}
+            buttonStyle={{ height: 35, marginTop: 10 }}
+            onPress={() => {
+              this.props.onPress(details);
+            }}
           />
         </View>
-        <Image source={{uri: details.content.thumbnail}} style={styles.imageStyle} />
+
+        <Image
+          source={{ uri: details.content.thumbnail }}
+          style={styles.imageStyle}
+        />
       </View>
-    )
-  }
+    );
+  };
+
+  onPressButton = (item) => {
+    this.props.onPress(item);
+  };
 
   render() {
     const details = this.props.content;
     return (
       <View>
         <View>
-          <TouchableOpacity onPress={()=>this.toggleExpand()}>
+          <TouchableOpacity onPress={() => this.toggleExpand()}>
             <View style={{ flexDirection: 'row' }}>
-              <Text style={{ fontSize: 16, color: '#777' }}>{this.state.expanded ? ' - ' : ' + '}</Text>
+              <Text style={{ fontSize: 16, color: '#777' }}>
+                {this.state.expanded ? ' - ' : ' + '}
+              </Text>
               <Text style={styles.title}>{this.props.title}</Text>
             </View>
           </TouchableOpacity>
-          <View/>
-          {
-            this.state.expanded &&
-            this.renderSubContent(details)
-          }
+          <View />
+          {this.props.hasSubCategory === 'naa'
+            ? this.state.expanded &&
+              details.subCategory &&
+              details.subCategory.map((item, id) => {
+                return (
+                  <View style={{ paddingLeft: 10 }}>
+                    <AccordionChildCategory
+                      key={'inner_' + id}
+                      title={item.title}
+                      content={item}
+                      hasSubCategory={
+                        item.subCategory && item.subCategory.length > 0
+                          ? 'naa'
+                          : 'wa'
+                      }
+                      onPress={this.props.onPress}
+                    />
+                  </View>
+                );
+              })
+            : this.state.expanded && this.renderSubContent(details)}
         </View>
         {this.renderPdfViewer()}
       </View>
-    )
+    );
   }
 }
 
@@ -114,26 +162,26 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: '#337ab7',
-    paddingBottom: 8
+    paddingBottom: 8,
   },
   child: {
     borderTopWidth: 0.5,
     borderColor: '#ddd',
     borderStyle: 'solid',
     backgroundColor: '#fff',
-    padding: 16
+    padding: 16,
   },
   subContainer: {
     flexDirection: 'row',
-    paddingVertical: 10
+    paddingVertical: 10,
   },
   imageStyle: {
     width: 140,
     height: 100,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
   textStyle: {
     fontSize: 14,
-    fontWeight: '500'
-  }
+    fontWeight: '500',
+  },
 });
