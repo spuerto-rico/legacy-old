@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-land/values-land.xml",
+            "outputFile": "E:\\Projects\\ReactNative\\legacyapp\\android\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "/Users/rico/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/08a309de6ddb3da10c38a62ae9ad832f/res/values-land/values-land.xml",
+                    "source": "C:\\Users\\Rico\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\b4dc67c7564aee94a6ad59bb217cbf98\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

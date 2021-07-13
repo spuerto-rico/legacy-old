@@ -1,4 +1,0 @@
-#Sun Jun 20 21:05:57 PST 2021
-base.0=/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/android/app/build/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex
