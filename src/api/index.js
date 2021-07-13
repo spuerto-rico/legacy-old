@@ -1,4 +1,4 @@
-export const API_URL = 'http://synergylegacynetwork.com/api/';
+export const API_URL = 'https://synergylegacynetwork.com/';
 import AsyncStorage from '@react-native-community/async-storage';
 
 export const HEADERS = {

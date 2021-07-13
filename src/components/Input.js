@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput } from 'react-native';
 
-const Input = ({ placeholder, secureText, containerStyle, value, onChangeText, editable, multiLine, maxLength, keyboardType}) => (
+const Input = ({ pointerEvents, placeholder, secureText, containerStyle, value, onChangeText, editable, multiLine, maxLength, keyboardType,}) => (
   <View style={containerStyle}>
     <TextInput 
+      pointerEvents={pointerEvents}
       autoCapitalize="none" 
       autoCompleteType="off"
       autoCorrect={false}
