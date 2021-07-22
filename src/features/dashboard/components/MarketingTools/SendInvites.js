@@ -123,14 +123,15 @@ class RowComponent extends Component {
             {data.title}
           </Text>
         </View>
-        <VideoPlayer
+        {data.content.isVimeo ? (<VideoPlayer
           endWithThumbnail
           thumbnail={{ uri: data.content.thumbnail }}
           video={{ uri: data.content.url }}
           videoWidth={750}
           videoHeight={380}
           ref={(r) => (this.player = r)}
-        />
+        />):(<View><Text>Youtube</Text></View>)}
+        
         <TouchableOpacity
           style={{ position: 'absolute', top: -10, right: -5 }}
           onPress={() => this.props.onPressDelete(data.id)}
@@ -467,7 +468,16 @@ class SendInvites extends Component {
     return result;
   };
 
-  onAddInvite = (data, id) => {
+  onAddInvite = async (data, id) => {
+    console.log(data);
+    if(data.content.isVimeo) {
+      const VIMEO_ID = data.content.url;
+      await fetch(`https://player.vimeo.com/video/${VIMEO_ID}/config`)
+      .then(res => res.json())
+      .then(res => {
+        data.content.url = res.request.files.hls.cdns[res.request.files.hls.default_cdn].url;
+      });
+    }
     console.log(data);
     let $listInvitePreview = this.state.listCategoryInvite;
     let hashId = this.makeid(32);
@@ -681,7 +691,7 @@ class SendInvites extends Component {
             </View>
           </View>
           <Image
-            source={{ uri: 'https://synergylegacynetwork.com//files/logo.png' }}
+            source={{ uri: 'https://synergylegacynetwork.com/files/logo.png' }}
             style={{
               width: 220,
               height: 60,

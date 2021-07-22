@@ -42,7 +42,8 @@
                   "content": {
                     "title": "",
                     "thumbnail": "https://synergylegacynetwork.com/images/products/PopUpsWithAssets/ProArgi-9+/Screenshot%20The%20History%20of%20ProArgi-9+%20Cropped.png",
-                    "url": "http://player.vimeo.com/video/541394319",
+                    "url": "541394319",
+                    "isVimeo": true,
                     "isPdf": false
                   }
                 },
@@ -52,7 +53,8 @@
                   "content": {
                     "title": "",
                     "thumbnail": "",
-                    "url": "",
+                    "url": "541394527",
+                    "isVimeo": true,
                     "isPdf": false
                   }
                 },
@@ -62,7 +64,8 @@
                   "content": {
                     "title": "",
                     "thumbnail": "",
-                    "url": "https://player.vimeo.com/video/541394592",
+                    "url": "541394592",
+                    "isVimeo": true,
                     "isPdf": false
                   }
                 },
@@ -81,7 +84,8 @@
                   "content": {
                     "title": "",
                     "thumbnail": "",
-                    "url": "",
+                    "url": "312618526",
+                    "isVimeo": true,
                     "isPdf": false
                   }
                 },
@@ -91,7 +95,8 @@
                   "content": {
                     "title": "",
                     "thumbnail": "",
-                    "url": "",
+                    "url": "551968300",
+                    "isVimeo": true,
                     "isPdf": false
                   }
                 },
@@ -110,7 +115,8 @@
                   "content": {
                     "title": "",
                     "thumbnail": "",
-                    "url": "",
+                    "url": "50252892",
+                    "isVimeo": true,
                     "isPdf": false
                   }
                 },
@@ -120,7 +126,8 @@
                   "content": {
                     "title": "",
                     "thumbnail": "",
-                    "url": "",
+                    "url": "50252889",
+                    "isVimeo": true,
                     "isPdf": false
                   }
                 }
@@ -187,7 +194,8 @@
               "content": {
                 "title": "",
                 "thumbnail": "",
-                "url": "",
+                "url": "P7pCCA0Fx2Y",
+                "isYoutube": true,
                 "isPdf": false
               }
             },
@@ -270,7 +278,8 @@
                   "content": {
                     "title": "",
                     "thumbnail": "",
-                    "url": "",
+                    "url": "558301670",
+                    "isVimeo": true,
                     "isPdf": false
                   }
                 },
@@ -290,7 +299,8 @@
                   "content": {
                     "title": "",
                     "thumbnail": "",
-                    "url": "",
+                    "url": "50322034",
+                    "isVimeo": true,
                     "isPdf": false
                   }
                 }
@@ -325,7 +335,8 @@
                   "content": {
                     "title": "",
                     "thumbnail": "",
-                    "url": "",
+                    "url": "558301457",
+                    "isVimeo": true,
                     "isPdf": false
                   }
                 },
@@ -390,7 +401,8 @@
                   "content": {
                     "title": "",
                     "thumbnail": "",
-                    "url": "",
+                    "url": "558300775",
+                    "isVimeo": true,
                     "isPdf": false
                   }
                 },
@@ -420,7 +432,8 @@
                   "content": {
                     "title": "",
                     "thumbnail": "",
-                    "url": "",
+                    "url": "551968300",
+                    "isVimeo": true,
                     "isPdf": false
                   }
                 }
@@ -456,7 +469,7 @@
               "content": {
                 "title": "",
                 "thumbnail": "",
-                "url": "",
+                
                 "isPdf": false
               }
             },
@@ -466,7 +479,8 @@
               "content": {
                 "title": "",
                 "thumbnail": "",
-                "url": "",
+                "url": "354201322",
+                "isVimeo": true,
                 "isPdf": false
               }
             },
@@ -476,7 +490,8 @@
               "content": {
                 "title": "",
                 "thumbnail": "",
-                "url": "",
+                "url": "350732294",
+                "isVimeo": true,
                 "isPdf": false
               }
             },
@@ -486,7 +501,8 @@
               "content": {
                 "title": "",
                 "thumbnail": "",
-                "url": "",
+                "url": "350732149",
+                "isVimeo": true,
                 "isPdf": false
               }
             },
@@ -496,7 +512,8 @@
               "content": {
                 "title": "",
                 "thumbnail": "",
-                "url": "",
+                "url": "350731797",
+                "isVimeo": true,
                 "isPdf": false
               }
             },
@@ -506,7 +523,8 @@
               "content": {
                 "title": "",
                 "thumbnail": "",
-                "url": "",
+                "url": "351088307",
+                "isVimeo": true,
                 "isPdf": false
               }
             },
@@ -516,7 +534,8 @@
               "content": {
                 "title": "",
                 "thumbnail": "",
-                "url": "",
+                "url": "351089256",
+                "isVimeo": true,
                 "isPdf": false
               }
             },
@@ -526,7 +545,8 @@
               "content": {
                 "title": "",
                 "thumbnail": "",
-                "url": "",
+                "url": "351088804",
+                "isVimeo": true,
                 "isPdf": false
               }
             },
@@ -536,7 +556,8 @@
               "content": {
                 "title": "",
                 "thumbnail": "",
-                "url": "",
+                "url": "351089511",
+                "isVimeo": true,
                 "isPdf": false
               }
             },
@@ -546,7 +567,8 @@
               "content": {
                 "title": "",
                 "thumbnail": "",
-                "url": "",
+                "url": "354201703",
+                "isVimeo": true,
                 "isPdf": false
               }
             }
@@ -561,7 +583,8 @@
               "content": {
                 "title": "",
                 "thumbnail": "",
-                "url": "",
+                "url": "351089909",
+                "isVimeo": true,
                 "isPdf": false
               }
             }
@@ -588,7 +611,8 @@
           "content": {
             "title": "",
             "thumbnail": "",
-            "url": "",
+            "url": "322066931",
+            "isVimeo": true,
             "isPdf": false
           }
         },
@@ -608,7 +632,8 @@
           "content": {
             "title": "",
             "thumbnail": "",
-            "url": "",
+            "url": "322067046",
+            "isVimeo": true,
             "isPdf": false
           }
         },
@@ -618,7 +643,8 @@
           "content": {
             "title": "",
             "thumbnail": "",
-            "url": "",
+            "url": "301254454",
+            "isVimeo": true,
             "isPdf": false
           }
         },
@@ -628,7 +654,8 @@
           "content": {
             "title": "",
             "thumbnail": "",
-            "url": "",
+            "url": "306489060",
+            "isVimeo": true,
             "isPdf": false
           }
         }
@@ -643,7 +670,8 @@
           "content": {
             "title": "",
             "thumbnail": "",
-            "url": "",
+            "url": "50322034",
+            "isVimeo": true,
             "isPdf": false
           }
         },
@@ -703,7 +731,8 @@
           "content": {
             "title": "",
             "thumbnail": "",
-            "url": "",
+            "url": "50256080",
+            "isVimeo": true,
             "isPdf": false
           }
         },
@@ -713,7 +742,8 @@
           "content": {
             "title": "",
             "thumbnail": "",
-            "url": "",
+            "url": "50250432",
+            "isVimeo": true,
             "isPdf": false
           }
         },
@@ -723,7 +753,8 @@
           "content": {
             "title": "",
             "thumbnail": "",
-            "url": "",
+            "url": "315593766",
+            "isVimeo": true,
             "isPdf": false
           }
         }
