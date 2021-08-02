@@ -2,9 +2,6 @@
   "category": [
     {
       "title": "Personal Video",
-      "content": {
-        "details": ""
-      },
       "subCategory": false
     },
     {
@@ -189,12 +186,12 @@
               }
             },
             {
-              "title": " IAM Cycling (Video) ",
+              "title": "IAM Cycling (Video)",
               "html": "<div class='embed-responsive embed-responsive-16by9'><center><iframe src='https://www.youtube.com/embed/P7pCCA0Fx2Y' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'allowfullscreen></iframe></center></div><br>",
               "content": {
                 "title": "",
                 "thumbnail": "",
-                "url": "P7pCCA0Fx2Y",
+                "url": "https://synergylegacynetwork.com/videos/iam-cycling-with-synergy.mp4",
                 "isYoutube": true,
                 "isPdf": false
               }
@@ -273,7 +270,7 @@
               "title": " BUILD YOUR OWN CONTENT ",
               "subCategory": [
                 {
-                  "title": " Overview Video (:60)",
+                  "title": "Overview Video (:61)",
                   "html": "<div class='embed-responsive embed-responsive-16by9'><center><iframe src='https://player.vimeo.com/video/558301670' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'allowfullscreen></iframe></center></div><br>",
                   "content": {
                     "title": "",
@@ -351,7 +348,7 @@
                   }
                 },
                 {
-                  "title": " Keynote Video (0:49)",
+                  "title": "Keynote Video (0:49)",
                   "html": "<div class='embed-responsive embed-responsive-16by9'><center><iframe src='https://www.youtube.com/embed/558301098' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'allowfullscreen></iframe></center></div><br>",
                   "content": {
                     "title": "",
@@ -396,7 +393,7 @@
               "title": " BUILD YOUR OWN CONTENT ",
               "subCategory": [
                 {
-                  "title": " Overview Video (:60)",
+                  "title": "Overview Video (:62)",
                   "html": "<div class='embed-responsive embed-responsive-16by9'><center><iframe src='https://player.vimeo.com/video/558300775' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'allowfullscreen></iframe></center></div><br>",
                   "content": {
                     "title": "",
@@ -411,7 +408,7 @@
                   "html": "<div class='embed-responsive embed-responsive-16by9'><center><iframe src='https://www.youtube.com/embed/cGGdp2KcrFA' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'allowfullscreen></iframe></center></div><br>",
                   "content": {
                     "title": "",
-                    "thumbnail": "",
+                    "thumbnail": "https://synergylegacynetwork.com/videos/proargi-9-quick-facts.mp4",
                     "url": "",
                     "isPdf": false
                   }
@@ -422,7 +419,7 @@
                   "content": {
                     "title": "",
                     "thumbnail": "",
-                    "url": "",
+                    "url": "https://synergylegacynetwork.com/videos/proargi-9+-bless-your-heart.mp4",
                     "isPdf": false
                   }
                 },

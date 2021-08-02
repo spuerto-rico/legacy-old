@@ -28,10 +28,8 @@ import SortableListView from 'react-native-sortable-listview';
 import VideoPlayer from 'react-native-video-player';
 import PDFView from 'react-native-view-pdf';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import Contacts from 'react-native-contacts';
 import Autocomplete from 'react-native-autocomplete-input';
 
@@ -130,7 +128,14 @@ class RowComponent extends Component {
           videoWidth={750}
           videoHeight={380}
           ref={(r) => (this.player = r)}
-        />):(<View><Text>Youtube</Text></View>)}
+        />):(<VideoPlayer
+          endWithThumbnail
+          thumbnail={{ uri: data.content.thumbnail }}
+          video={{ uri: data.content.url }}
+          videoWidth={750}
+          videoHeight={380}
+          ref={(r) => (this.player = r)}
+        />)}
         
         <TouchableOpacity
           style={{ position: 'absolute', top: -10, right: -5 }}
@@ -213,7 +218,6 @@ class SendInvites extends Component {
   componentDidMount() {
     AsyncStorage.getItem('profileInfo').then((res) => {
       let $res = JSON.parse(res);
-      console.log($res);
       this.setState({
         synergy_id: $res.synergy_id,
         userId: $res.id,
@@ -300,9 +304,9 @@ class SendInvites extends Component {
     let params = {
       user_id: this.state.userId,
       type: this.state.type,
-      name: this.state.name,
+      sender_name: this.state.name,
       purl: this.state.purl,
-      message: this.state.message,
+      name: this.state.message,
       video_invite: '',
     };
 
@@ -476,9 +480,12 @@ class SendInvites extends Component {
       .then(res => res.json())
       .then(res => {
         data.content.url = res.request.files.hls.cdns[res.request.files.hls.default_cdn].url;
+      })
+      .catch(function(error) {
+        console.log('There has been a problem with your fetch operation: ' + error.message);
       });
     }
-    console.log(data);
+    
     let $listInvitePreview = this.state.listCategoryInvite;
     let hashId = this.makeid(32);
     data['id'] = hashId;
@@ -537,7 +544,7 @@ class SendInvites extends Component {
             {Data.category.map((item, id) => {
               return (
                 <AccordionCategory
-                  key={id}
+                  key={`${id}_main_${item.title}`}
                   title={item.title}
                   contentList={item}
                   onPress={(data, key) => this.onAddInvite(data, key)}
@@ -612,7 +619,7 @@ class SendInvites extends Component {
                 text="Cancel"
                 textStyle={{ fontSize: 16, fontWeight: 'bold' }}
                 buttonStyle={{
-                  width: 80,
+                  width: 90,
                   height: 40,
                   backgroundColor: 'tranparent',
                 }}
@@ -626,7 +633,7 @@ class SendInvites extends Component {
                 text="Done"
                 textStyle={{ fontSize: 16, fontWeight: 'bold' }}
                 buttonStyle={{
-                  width: 80,
+                  width: 100,
                   height: 40,
                   backgroundColor: 'tranparent',
                 }}
@@ -637,8 +644,11 @@ class SendInvites extends Component {
           <View style={{ flex: 1, padding: 10 }}>
             <FormInline>
               <Input
+                autoFocus = {true}
                 value={this.state.inputPopup}
-                onChangeText={(inputPopup) => this.setState({ inputPopup })}
+                onChangeText={(inputPopup) => { 
+                  this.setState({ inputPopup })
+                }}
                 containerStyle={{ marginBottom: 10 }}
               />
             </FormInline>
@@ -783,7 +793,76 @@ class SendInvites extends Component {
         >
           <Card title="SEND INVITE" isShadow={true}>
             <View style={styles.textContainer}>
-              <Text style={styles.textStyle}></Text>
+
+              {this.state.type == 'sms' ? (
+              <View>
+                <FormInline label="Name of Sender" style={{ zIndex: 10 }}>
+                  <Autocomplete
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    data={
+                      contacts.length === 1 &&
+                      comp(query, contacts[0].givenName)
+                        ? []
+                        : contacts
+                    }
+                    defaultValue={query}
+                    onChangeText={(text) =>
+                      this.setState({ query: text, name: text })
+                    }
+                    placeholder=""
+                    renderItem={(res, id) => {
+                      return (
+                        <TouchableOpacity
+                          style={{
+                            backgroundColor: 'white',
+                            paddingVertical: 5,
+                          }}
+                          key={id}
+                          onPress={() =>
+                            this.setState({
+                              query: res.item.givenName,
+                              name: res.item.givenName,
+                              phone:
+                                res.item.phoneNumbers.length > 0
+                                  ? res.item.phoneNumbers[0].number
+                                  : 'None',
+                            })
+                          }
+                        >
+                          <Text
+                            style={{
+                              paddingVertical: 5,
+                              paddingHorizontal: 5,
+                            }}
+                          >
+                            {res.item.givenName}{' '}
+                            {res.item.phoneNumbers.length > 0
+                              ? res.item.phoneNumbers[0].number
+                              : 'None'}
+                          </Text>
+                        </TouchableOpacity>
+                      );
+                    }}
+                  />
+                </FormInline>
+              </View>):(
+              <View>
+                  <FormInline label="Name of Sender">
+                    <Input
+                      placeholder={this.state.name}
+                      value={this.state.name}
+                      onChangeText={(name) => this.setState({ name })}
+                      containerStyle={{ marginBottom: 10 }}
+                    />
+                    {this.state.isNullName ? (
+                      <Text style={styles.errorText}>
+                        *Please fill out this required field
+                      </Text>
+                    ) : null}
+                  </FormInline>
+              </View>)}
+
               {Platform.OS == 'android' ? (
                 <FormInline label="Message Type">
                   <DropDownPicker
@@ -810,55 +889,27 @@ class SendInvites extends Component {
 
               {this.state.type == 'sms' ? (
                 <View>
-                  <FormInline label="Name" style={{ zIndex: 10 }}>
-                    <Autocomplete
-                      autoCapitalize="none"
-                      autoCorrect={false}
-                      data={
-                        contacts.length === 1 &&
-                        comp(query, contacts[0].givenName)
-                          ? []
-                          : contacts
+                  <FormInline label="Contact's Name">
+                    <TouchableOpacity
+                      onPress={() =>
+                        this.onFocusInput('message', this.state.message)
                       }
-                      defaultValue={query}
-                      onChangeText={(text) =>
-                        this.setState({ query: text, name: text })
-                      }
-                      placeholder=""
-                      renderItem={(res, id) => {
-                        return (
-                          <TouchableOpacity
-                            style={{
-                              backgroundColor: 'white',
-                              paddingVertical: 5,
-                            }}
-                            key={id}
-                            onPress={() =>
-                              this.setState({
-                                query: res.item.givenName,
-                                name: res.item.givenName,
-                                phone:
-                                  res.item.phoneNumbers.length > 0
-                                    ? res.item.phoneNumbers[0].number
-                                    : 'None',
-                              })
-                            }
-                          >
-                            <Text
-                              style={{
-                                paddingVertical: 5,
-                                paddingHorizontal: 5,
-                              }}
-                            >
-                              {res.item.givenName}{' '}
-                              {res.item.phoneNumbers.length > 0
-                                ? res.item.phoneNumbers[0].number
-                                : 'None'}
-                            </Text>
-                          </TouchableOpacity>
-                        );
-                      }}
-                    />
+                    >
+                      {Platform.OS != 'android' ? (<Input
+                        pointerEvents={'none'}
+                        placeholder={this.state.message}
+                        value={this.state.message}
+                        onChangeText={(message) => this.setState({ message })}
+                        containerStyle={{ marginBottom: 10 }}
+                      />): (<View style={styles.inputStyle}>
+                        <Text style={{color: 'black', fontSize: 16}}>{this.state.message}</Text>
+                      </View>)}
+                    </TouchableOpacity>
+                    {this.state.isNullMessage ? (
+                      <Text style={styles.errorText}>
+                        *Please fill out this required field
+                      </Text>
+                    ) : null}
                   </FormInline>
                   <FormInline label="Phone">
                     <TouchableOpacity
@@ -866,35 +917,17 @@ class SendInvites extends Component {
                         this.onFocusInput('phone', this.state.phone)
                       }
                     >
-                      <Input
+                      {Platform.OS != 'android' ? (<Input
                         pointerEvents={'none'}
                         placeholder={this.state.phone}
                         value={this.state.phone}
                         onChangeText={(phone) => this.setState({ phone })}
                         containerStyle={{ marginBottom: 10 }}
-                      />
+                      />): (<View style={styles.inputStyle}>
+                        <Text style={{color: 'black', fontSize: 16}}>{this.state.phone}</Text>
+                      </View>)}
                     </TouchableOpacity>
                     {this.state.isNullPhone ? (
-                      <Text style={styles.errorText}>
-                        *Please fill out this required field
-                      </Text>
-                    ) : null}
-                  </FormInline>
-                  <FormInline label="Message">
-                    <TouchableOpacity
-                      onPress={() =>
-                        this.onFocusInput('message', this.state.message)
-                      }
-                    >
-                      <Input
-                        pointerEvents={'none'}
-                        placeholder={this.state.message}
-                        value={this.state.message}
-                        onChangeText={(message) => this.setState({ message })}
-                        containerStyle={{ marginBottom: 10 }}
-                      />
-                    </TouchableOpacity>
-                    {this.state.isNullMessage ? (
                       <Text style={styles.errorText}>
                         *Please fill out this required field
                       </Text>
@@ -916,14 +949,23 @@ class SendInvites extends Component {
                       </Text>
                     ) : null}
                   </FormInline>
-                  <FormInline label="Name">
-                    <Input
-                      placeholder={this.state.name}
-                      value={this.state.name}
-                      onChangeText={(name) => this.setState({ name })}
-                      containerStyle={{ marginBottom: 10 }}
-                    />
-                    {this.state.isNullName ? (
+                  <FormInline label="Contact's Name">
+                    <TouchableOpacity
+                      onPress={() =>
+                        this.onFocusInput('message', this.state.message)
+                      }
+                    >
+                      {Platform.OS == 'ios' ? (<Input
+                        pointerEvents={'none'}
+                        placeholder={this.state.message}
+                        value={this.state.message}
+                        onChangeText={(message) => this.setState({ message })}
+                        containerStyle={{ marginBottom: 10 }}
+                      />): (<View style={styles.inputStyle}>
+                        <Text style={{color: 'black', fontSize: 16}}>{this.state.message}</Text>
+                      </View>)}
+                    </TouchableOpacity>
+                    {this.state.isNullMessage ? (
                       <Text style={styles.errorText}>
                         *Please fill out this required field
                       </Text>
@@ -935,13 +977,15 @@ class SendInvites extends Component {
                         this.onFocusInput('email', this.state.email)
                       }
                     >
-                      <Input
+                      {Platform.OS == 'ios' ? (<Input
                         pointerEvents={'none'}
                         placeholder={this.state.email}
                         value={this.state.email}
                         onChangeText={(email) => this.setState({ email })}
                         containerStyle={{ marginBottom: 10 }}
-                      />
+                      />): (<View style={styles.inputStyle}>
+                        <Text style={{color: 'black', fontSize: 16}}>{this.state.email}</Text>
+                      </View>)}
                     </TouchableOpacity>
                     {this.state.isNullEmail ? (
                       <Text style={styles.errorText}>
@@ -950,26 +994,6 @@ class SendInvites extends Component {
                     ) : null}
                     {!this.state.isValidEmail ? (
                       <Text style={styles.errorText}>*Email is invalid</Text>
-                    ) : null}
-                  </FormInline>
-                  <FormInline label="Message">
-                    <TouchableOpacity
-                      onPress={() =>
-                        this.onFocusInput('message', this.state.message)
-                      }
-                    >
-                      <Input
-                        pointerEvents={'none'}
-                        placeholder={this.state.message}
-                        value={this.state.message}
-                        onChangeText={(message) => this.setState({ message })}
-                        containerStyle={{ marginBottom: 10 }}
-                      />
-                    </TouchableOpacity>
-                    {this.state.isNullMessage ? (
-                      <Text style={styles.errorText}>
-                        *Please fill out this required field
-                      </Text>
                     ) : null}
                   </FormInline>
                 </View>
@@ -1053,6 +1077,18 @@ const styles = StyleSheet.create({
     top: 0,
     zIndex: 1,
   },
+  inputStyle: {
+    borderColor: 'lightgray',
+    borderBottomWidth: 1,
+    borderTopWidth: 1,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    paddingBottom: 5,
+    paddingTop: 5,
+    paddingLeft: 2,
+    paddingHorizontal: 2,
+    height: 40,
+  }
 });
 
 const mapStateToProps = (state) => ({

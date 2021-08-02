@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput } from 'react-native';
 
-const Input = ({ pointerEvents, placeholder, secureText, containerStyle, value, onChangeText, editable, multiLine, maxLength, keyboardType,}) => (
+const Input = ({ pointerEvents, caretHidden, placeholder, secureText, containerStyle, value, onChangeText, editable, multiLine, maxLength, keyboardType, autoFocus}) => (
   <View style={containerStyle}>
     <TextInput 
       pointerEvents={pointerEvents}
       autoCapitalize="none" 
+      autoFocus = {autoFocus}
       autoCompleteType="off"
       autoCorrect={false}
-      placeholder={placeholder} 
+      placeholder={placeholder}
       value={value} 
       secureTextEntry={secureText} 
       editable={editable} 

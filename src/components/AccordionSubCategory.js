@@ -127,7 +127,7 @@ export default class AccordionSubCategory extends Component {
                 return (
                   <View style={{ paddingLeft: 10 }}>
                     <AccordionChildCategory
-                      key={'inner_' + id}
+                      key={`${id}_child_${item.title}`}
                       title={item.title}
                       content={item}
                       hasSubCategory={

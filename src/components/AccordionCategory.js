@@ -70,7 +70,12 @@ export default class AccordionCategory extends Component {
   };
 
   renderSubContent = () => {
-    return <View />;
+    return (
+    <View style={styles.subContainer} >
+      <View style={{ flex: 1 }}> 
+        <Text style={{}}>Add a personally recorded short video for your invite.</Text>
+      </View>
+    </View>);
   };
 
   renderContent = (subCategory) => {
@@ -80,7 +85,7 @@ export default class AccordionCategory extends Component {
           subCategory.map((item, id) => {
             return (
               <AccordionSubCategory
-                key={id}
+                key={`${id}_parent_${item.title}`}
                 title={item.title}
                 content={item}
                 hasSubCategory={
@@ -108,7 +113,7 @@ export default class AccordionCategory extends Component {
             </View>
           </TouchableOpacity>
           <View />
-          {this.state.expanded && this.renderContent(subCategory)}
+          {subCategory === false ? this.state.expanded && this.renderSubContent() : this.state.expanded && this.renderContent(subCategory)}
         </View>
       </View>
     );
@@ -137,5 +142,9 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     backgroundColor: '#fff',
     padding: 16,
+  },
+  subContainer: {
+    flexDirection: 'row',
+    paddingVertical: 10,
   },
 });
