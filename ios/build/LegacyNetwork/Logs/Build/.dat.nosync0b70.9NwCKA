@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>05A21BA4-A7FD-473F-AD2E-3F6C5EAA142C</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>05A21BA4-A7FD-473F-AD2E-3F6C5EAA142C.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>LegacyNetwork project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>LegacyNetwork</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace LegacyNetwork with scheme LegacyNetwork and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>650016593.64190698</real>
+			<key>timeStoppedRecording</key>
+			<real>650016596.99295998</real>
+			<key>title</key>
+			<string>Building workspace LegacyNetwork with scheme LegacyNetwork and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>05A21BA4-A7FD-473F-AD2E-3F6C5EAA142C</string>
+		</dict>
+		<key>FCF89D62-65BD-4D6C-B31F-B1E23E0E21EB</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>FCF89D62-65BD-4D6C-B31F-B1E23E0E21EB.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>LegacyNetwork project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>LegacyNetwork</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace LegacyNetwork with scheme LegacyNetwork and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>650207360.63673902</real>
+			<key>timeStoppedRecording</key>
+			<real>650207405.60677898</real>
+			<key>title</key>
+			<string>Building workspace LegacyNetwork with scheme LegacyNetwork and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>FCF89D62-65BD-4D6C-B31F-B1E23E0E21EB</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

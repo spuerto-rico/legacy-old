@@ -11,6 +11,7 @@ import PDFView from 'react-native-view-pdf';
 import Modal from 'react-native-modal';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AccordionSubCategory from './AccordionSubCategory';
+// import DocumentPicker from 'react-native-document-picker';
 var { height, width } = Dimensions.get('window');
 
 export default class AccordionCategory extends Component {
@@ -31,6 +32,27 @@ export default class AccordionCategory extends Component {
 
   subToggleExpand = () => {
     this.setState({ subExpanded: !this.state.subExpanded });
+  };
+
+  selectOneFile = async () => {
+    //Opening Document Picker for selection of one file
+    // try {
+    //   const res = await DocumentPicker.pick({
+    //     type: [DocumentPicker.types.images],
+    //   });
+    //   console.log(
+    //     res.uri,
+    //     res.type, // mime type
+    //     res.name,
+    //     res.size
+    //   );
+    // } catch (err) {
+    //   if (DocumentPicker.isCancel(err)) {
+    //     // User cancelled the picker, exit any dialogs or menus and move on
+    //   } else {
+    //     throw err;
+    //   }
+    // }
   };
 
   renderPdfViewer = () => {
@@ -74,6 +96,22 @@ export default class AccordionCategory extends Component {
     <View style={styles.subContainer} >
       <View style={{ flex: 1 }}> 
         <Text style={{}}>Add a personally recorded short video for your invite.</Text>
+
+        <TouchableOpacity
+          activeOpacity={0.5}
+          style={styles.buttonStyle}
+          onPress={() => this.selectOneFile() }>
+          {/*Single file selection button*/}
+          <Text style={{marginRight: 10, fontSize: 19}}>
+            Click here to pick one file
+          </Text>
+          <Image
+            source={{
+              uri: 'https://img.icons8.com/offices/40/000000/attach.png',
+            }}
+            style={styles.imageIconStyle}
+          />
+        </TouchableOpacity>
       </View>
     </View>);
   };
@@ -147,4 +185,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingVertical: 10,
   },
+  buttonStyle: {
+    backgroundColor: '#307ecc',
+    borderWidth: 0,
+    color: '#FFFFFF',
+    borderColor: '#307ecc',
+    height: 40,
+    alignItems: 'center',
+    borderRadius: 30,
+    marginLeft: 35,
+    marginRight: 35,
+    marginTop: 15,
+  },
+  //https://aboutreact.com/file-uploading-in-react-native/
 });

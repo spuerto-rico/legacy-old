@@ -222,6 +222,7 @@ class SendInvites extends Component {
         synergy_id: $res.synergy_id,
         userId: $res.id,
         purl: $res.purl,
+        name: `${$res.first_name} ${$res.last_name}`,
       });
     });
 
@@ -600,6 +601,10 @@ class SendInvites extends Component {
   };
 
   renderInputPopup = () => {
+    const { query } = this.state;
+    const contacts = this.findFilm(query);
+    const comp = (a, b) => a.toLowerCase().trim() === b.toLowerCase().trim();
+
     return (
       <Modal
         deviceHeight={height}
@@ -643,14 +648,63 @@ class SendInvites extends Component {
           </View>
           <View style={{ flex: 1, padding: 10 }}>
             <FormInline>
-              <Input
+              { this.state.inputType === 'message' ? (<Autocomplete
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  autoFocus = {true}
+                  data={
+                      contacts.length === 1 &&
+                      comp(query, contacts[0].givenName)
+                      ? []
+                      : contacts
+                  }
+                  defaultValue={query}
+                  onChangeText={(text) =>
+                      this.setState({ query: text, inputPopup: text, message: text })
+                  }
+                  placeholder=""
+                  renderItem={(res, id) => {
+                      return (
+                      <TouchableOpacity
+                          style={{
+                          backgroundColor: 'white',
+                          paddingVertical: 5,
+                          }}
+                          key={id}
+                          onPress={() =>
+                          this.setState({
+                              query: res.item.givenName,
+                              message: res.item.givenName,
+                              phone:
+                              res.item.phoneNumbers.length > 0
+                                  ? res.item.phoneNumbers[0].number
+                                  : 'None',
+                          })
+                          }
+                      >
+                          <Text
+                          style={{
+                              paddingVertical: 5,
+                              paddingHorizontal: 5,
+                          }}
+                          >
+                          {res.item.givenName}{' '}
+                          {res.item.phoneNumbers.length > 0
+                              ? res.item.phoneNumbers[0].number
+                              : 'None'}
+                          </Text>
+                      </TouchableOpacity>
+                      );
+                  }}
+              />):(<Input
                 autoFocus = {true}
                 value={this.state.inputPopup}
                 onChangeText={(inputPopup) => { 
                   this.setState({ inputPopup })
                 }}
                 containerStyle={{ marginBottom: 10 }}
-              />
+              />)}
+              
             </FormInline>
           </View>
         </View>
@@ -775,9 +829,7 @@ class SendInvites extends Component {
   };
 
   render() {
-    const { query } = this.state;
-    const contacts = this.findFilm(query);
-    const comp = (a, b) => a.toLowerCase().trim() === b.toLowerCase().trim();
+    
 
     return (
       <View style={{ flex: 1 }}>
@@ -793,63 +845,10 @@ class SendInvites extends Component {
         >
           <Card title="SEND INVITE" isShadow={true}>
             <View style={styles.textContainer}>
-
-              {this.state.type == 'sms' ? (
               <View>
-                <FormInline label="Name of Sender" style={{ zIndex: 10 }}>
-                  <Autocomplete
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                    data={
-                      contacts.length === 1 &&
-                      comp(query, contacts[0].givenName)
-                        ? []
-                        : contacts
-                    }
-                    defaultValue={query}
-                    onChangeText={(text) =>
-                      this.setState({ query: text, name: text })
-                    }
-                    placeholder=""
-                    renderItem={(res, id) => {
-                      return (
-                        <TouchableOpacity
-                          style={{
-                            backgroundColor: 'white',
-                            paddingVertical: 5,
-                          }}
-                          key={id}
-                          onPress={() =>
-                            this.setState({
-                              query: res.item.givenName,
-                              name: res.item.givenName,
-                              phone:
-                                res.item.phoneNumbers.length > 0
-                                  ? res.item.phoneNumbers[0].number
-                                  : 'None',
-                            })
-                          }
-                        >
-                          <Text
-                            style={{
-                              paddingVertical: 5,
-                              paddingHorizontal: 5,
-                            }}
-                          >
-                            {res.item.givenName}{' '}
-                            {res.item.phoneNumbers.length > 0
-                              ? res.item.phoneNumbers[0].number
-                              : 'None'}
-                          </Text>
-                        </TouchableOpacity>
-                      );
-                    }}
-                  />
-                </FormInline>
-              </View>):(
-              <View>
-                  <FormInline label="Name of Sender">
+                  <FormInline >
                     <Input
+                      editable={false}
                       placeholder={this.state.name}
                       value={this.state.name}
                       onChangeText={(name) => this.setState({ name })}
@@ -861,8 +860,7 @@ class SendInvites extends Component {
                       </Text>
                     ) : null}
                   </FormInline>
-              </View>)}
-
+              </View>
               {Platform.OS == 'android' ? (
                 <FormInline label="Message Type">
                   <DropDownPicker

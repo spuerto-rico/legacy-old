@@ -1,7 +1,7 @@
 # File Upload API Documentation
 
 ## API Endpoint
-`POST` - `api/v1/upload-file`
+`POST` - `api/upload-file`
 
 ## Form Data
 | Property Name | Required | Type             | Description               |

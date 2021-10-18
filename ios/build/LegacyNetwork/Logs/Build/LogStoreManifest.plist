@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>8400F855-40E5-4845-9EB3-352B5F3FFB54</key>
+		<key>1A6AC4FC-3FD6-474A-8D38-BE2BC85C23C3</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>8400F855-40E5-4845-9EB3-352B5F3FFB54.xcactivitylog</string>
+			<string>1A6AC4FC-3FD6-474A-8D38-BE2BC85C23C3.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,15 +32,15 @@
 			<key>signature</key>
 			<string>Building workspace LegacyNetwork with scheme LegacyNetwork and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>647443851.15239799</real>
+			<real>651075887.30970395</real>
 			<key>timeStoppedRecording</key>
-			<real>647443875.19836295</real>
+			<real>651075892.91230404</real>
 			<key>title</key>
 			<string>Building workspace LegacyNetwork with scheme LegacyNetwork and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>8400F855-40E5-4845-9EB3-352B5F3FFB54</string>
+			<string>1A6AC4FC-3FD6-474A-8D38-BE2BC85C23C3</string>
 		</dict>
-		<key>F7528227-4151-477D-A173-279B822B4DA5</key>
+		<key>588D1C40-D98C-4015-B1FC-DA16C393E984</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -49,7 +49,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>F7528227-4151-477D-A173-279B822B4DA5.xcactivitylog</string>
+			<string>588D1C40-D98C-4015-B1FC-DA16C393E984.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -66,13 +66,13 @@
 			<key>signature</key>
 			<string>Building workspace LegacyNetwork with scheme LegacyNetwork and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>647528920.02071404</real>
+			<real>651588373.62505698</real>
 			<key>timeStoppedRecording</key>
-			<real>647528925.87405396</real>
+			<real>651588378.91786206</real>
 			<key>title</key>
 			<string>Building workspace LegacyNetwork with scheme LegacyNetwork and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>F7528227-4151-477D-A173-279B822B4DA5</string>
+			<string>588D1C40-D98C-4015-B1FC-DA16C393E984</string>
 		</dict>
 	</dict>
 </dict>

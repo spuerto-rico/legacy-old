@@ -14,7 +14,6 @@ export const tokenRequest = (username, password) => {
   return async (dispatch) => {
     dispatch({ type: LOGIN_REQUEST });
     try {
-      console.log('here');
       let response = await postCall('oauth/token', { ...OAUTH, username, password });
       console.log('hereddd');
       let result = await response.json();

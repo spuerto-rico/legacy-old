@@ -12,6 +12,8 @@ target 'LegacyNetwork' do
   #   # Pods for testing
   # end
 
+  # pod 'react-native-document-picker', :path => '../node_modules/react-native-document-picker'
+
   target 'LegacyNetworkTests' do
     inherit! :search_paths
     # Pods for testing

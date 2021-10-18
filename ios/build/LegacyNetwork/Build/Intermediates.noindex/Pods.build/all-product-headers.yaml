@@ -28,33 +28,6 @@
           'external-contents': "/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/build/LegacyNetwork/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Pods-LegacyNetwork.build/module.modulemap"
         }
       ]
-    },
-    {
-      'type': 'directory',
-      'name': "/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/build/LegacyNetwork/Build/Products/Debug-iphonesimulator/Pods_LegacyNetworkTests.framework/Headers",
-      'contents': [
-        {
-          'type': 'file',
-          'name': "Pods-LegacyNetworkTests-umbrella.h",
-          'external-contents': "/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/Pods/Target Support Files/Pods-LegacyNetworkTests/Pods-LegacyNetworkTests-umbrella.h"
-        },
-        {
-          'type': 'file',
-          'name': "Pods_LegacyNetworkTests-Swift.h",
-          'external-contents': "/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/build/LegacyNetwork/Build/Products/Debug-iphonesimulator/Pods_LegacyNetworkTests.framework/Headers/Pods_LegacyNetworkTests-Swift.h"
-        }
-      ]
-    },
-    {
-      'type': 'directory',
-      'name': "/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/build/LegacyNetwork/Build/Products/Debug-iphonesimulator/Pods_LegacyNetworkTests.framework/Modules",
-      'contents': [
-        {
-          'type': 'file',
-          'name': "module.modulemap",
-          'external-contents': "/Users/rico/Applications/Projects/Mobile/ReactNative/legacyapp/ios/build/LegacyNetwork/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Pods-LegacyNetworkTests.build/module.modulemap"
-        }
-      ]
     }
   ]
 }

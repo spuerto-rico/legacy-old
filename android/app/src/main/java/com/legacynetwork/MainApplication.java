@@ -3,6 +3,9 @@ package com.legacynetwork;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import ui.fileselector.RNFileSelectorPackage;
+import com.vinzscam.reactnativefileviewer.RNFileViewerPackage;
+import io.github.elyx0.reactnativedocumentpicker.DocumentPickerPackage;
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -31,6 +34,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNFileSelectorPackage(),
+            new RNFileViewerPackage(),
+            new DocumentPickerPackage(),
             new ReactNativeContacts(),
             new ReactCheckBoxPackage(),
             new VectorIconsPackage(),
